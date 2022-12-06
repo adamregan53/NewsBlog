@@ -24,8 +24,8 @@ class PostsController < ApplicationController
             title = article["title"]
             @articles_array.push(title)
         end
-        @articles_map = @articles_array.each_with_index.map{|l, i| [i, l]}
-
+        @articles_map = @articles_array.each_with_index.map{|l, i| [l, i]}
+        @articles_hash = @articles_map.to_h
     end
 
     def create

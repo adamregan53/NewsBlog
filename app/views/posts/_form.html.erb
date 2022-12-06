@@ -1,7 +1,7 @@
 <%= form_with model: post do |form| %>
     <div>
       <%= form.label :article %><br>
-      <%= form.select :article, @articles_map%>
+      <%= form.select :article, @articles_array%>
       <% post.errors.full_messages_for(:article).each do |message| %>
         <div><%= message %></div>
       <% end %>
