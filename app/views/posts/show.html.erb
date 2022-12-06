@@ -1,7 +1,15 @@
-<div class="md:container bg-slate-300 p-3">
+<div class="md:container bg-slate-300 p-5">
     <div class="p-3">
         <h1 class="font-bold text-2xl"><%= @post.article %></h1>
         <p class="pt-3"><%= @post.body %></p>
-    </div
+    </div>
 
-</div
+    <div class="p-3">
+        <h2 class="font-bold">Add Comment</h2>
+        <%= render 'comments/form' %>
+
+        <h2 class="font-bold">Comments</h2>
+        <%= render @post.comments %>
+    </div>
+
+</div>
