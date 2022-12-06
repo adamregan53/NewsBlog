@@ -9,8 +9,8 @@
                 <div class="p-3">
                     <h2 class="font-bold"><%= post.article %></h2>
                     <p><%= post.body %></p>
-                    <p>Posted by <%= post.user.email %></p>
-                    <p>Published <%= post.created_at.strftime("%m/%d/%Y %H:%M") %></p>
+                    <p class="text-xs">Posted by <%= post.user.email %></p>
+                    <p class="text-xs">Published <%= post.created_at.strftime("%m/%d/%Y %H:%M") %></p>
                 </div>
                 <button type="button" 
                     class="inline-block mx-3 px-6 py-2.5 bg-blue-600 text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
