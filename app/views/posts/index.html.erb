@@ -1,0 +1,16 @@
+<div class="md:container bg-slate-300 p-3">
+    <h1>Posts</h1>
+
+    <ul>
+        <% @post.each do |post| %>
+            <li>
+            <div class="p-3">
+                <h2><%= post.article %></h2>
+                <p><%= post.body %></p>
+                <p>Published <%= post.created_at.strftime("%m/%d/%Y %H:%M") %></p>
+            </div>
+            </li>
+        <% end %>
+
+    </ul>
+</div>

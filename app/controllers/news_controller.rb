@@ -14,6 +14,9 @@ class NewsController < ApplicationController
   
       #newsapi_response = requestURL(newsapi_url)
       #gnews_response = requestURL(gnews_url)
+
+      #File.open("newsapi.json", "w") { |f| f.write newsapi_response }
+      #File.open("gnews.json", "w") { |f| f.write gnews_response}
   
       newsapi_response = File.read("newsapi_testdata.json")
       gnews_response = File.read("gnews_testdata.json")
@@ -36,6 +39,8 @@ class NewsController < ApplicationController
         @articles = result.to_s
       end
     end
+    
+
   
     private
       def parseJSON(json)
