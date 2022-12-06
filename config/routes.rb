@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "news#index"
   get '/refine', :controller=>'news', :action=>'refine'
 
+
   resources :posts do
     resources :comments
   end

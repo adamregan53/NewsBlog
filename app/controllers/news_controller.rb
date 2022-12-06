@@ -39,8 +39,6 @@ class NewsController < ApplicationController
         @articles = result.to_s
       end
     end
-    
-
   
     private
       def parseJSON(json)
