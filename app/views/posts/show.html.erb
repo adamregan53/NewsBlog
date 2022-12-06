@@ -5,11 +5,14 @@
     </div>
 
     <div class="p-3">
-        <h2 class="font-bold">Add Comment</h2>
-        <%= render 'comments/form' %>
-
-        <h2 class="font-bold">Comments</h2>
-        <%= render @post.comments %>
+        <div>
+            <h2 class="font-bold mb-1">Add Comment</h2>
+            <%= render 'comments/form' %>
+        </div>
+        <div >
+            <h2 class="font-bold">Comments</h2>
+            <%= render @post.comments %>  
+        </div>  
     </div>
 
 </div>

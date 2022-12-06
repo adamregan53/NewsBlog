@@ -20,12 +20,10 @@ class PostsController < ApplicationController
         articles = gnews_obj + newsapi_obj
 
         @articles_array = []
-        articles.each_with_index do |article, i| 
+        articles.each do |article| 
             title = article["title"]
             @articles_array.push(title)
         end
-        @articles_map = @articles_array.each_with_index.map{|l, i| [l, i]}
-        @articles_hash = @articles_map.to_h
     end
 
     def create
