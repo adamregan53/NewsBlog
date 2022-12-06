@@ -1,0 +1,36 @@
+<ul class="divide-y divide-gray-900 divide-dashed">
+
+
+    <% @articles.each_with_index do |article, i| %>
+
+        <div class="grid grid-cols-3">
+
+            <div class="max-w-md m-3 col-span-1 col-start-1">
+                <% if (article["urlToImage"] != nil) then %>
+                    <%= image_tag article["urlToImage"] %>
+                <% elsif (article["image"] != nil) then%>
+                    <%= image_tag article["image"] %>
+                <% else %>
+                    <img src = "<%= asset_path('no-image-available.jpeg') %>" />
+                <% end %>
+            </div>
+
+            <div class = "max-w-fit m-3 col-span-2 col-start-2">
+                <h3 class="font-bold"><%= article["title"] %></h3>
+                <p><%= article["description"] %></p>
+                <br>
+                <p><%= article["content"] %></p>
+                <br>
+                <% if article["url"].length > 135 %>
+                    <% str = article["url"] %>
+                    <%= str[0, 135] + "..." %>
+                <% else %>
+                    <%= article["url"] %>
+                <% end %>
+            </div>
+
+         </div>
+
+    <% end %>
+  
+</ul>
