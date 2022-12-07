@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "news#index"
-  get '/refine', :controller=>'news', :action=>'refine'
-
+  root to: 'news#index'
+  get '/refine', controller: 'news', action: 'refine'
 
   resources :posts do
     resources :comments
