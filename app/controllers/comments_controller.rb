@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This is the top level comment controller comment
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])

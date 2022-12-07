@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This is the top leve comment for Posts controller
 class PostsController < ApplicationController
   def index
     @post = Post.all
@@ -15,15 +16,14 @@ class PostsController < ApplicationController
     newsapi_response = File.read('newsapi.json')
     gnews_response = File.read('gnews.json')
 
-    newsapi_obj = parseJSON(newsapi_response)
-    gnews_obj = parseJSON(gnews_response)
+    newsapi_obj = parse_json(newsapi_response)
+    gnews_obj = parse_json(gnews_response)
 
     articles = gnews_obj + newsapi_obj
 
     @articles_array = []
     articles.each do |article|
-      title = article['title']
-      @articles_array.push(title)
+      @articles_array.push(article['title'])
     end
   end
 
@@ -65,7 +65,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:article, :body)
   end
 
-  def parseJSON(json)
+  def parse_json(json)
     json_parsed = JSON.parse(json)
     json_parsed['articles']
   end

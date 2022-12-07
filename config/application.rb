@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-
+# rubocop:disable all
+# This is the top level comment for config/application
 require_relative 'boot'
 
 require 'rails/all'

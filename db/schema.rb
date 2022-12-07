@@ -12,8 +12,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+# rubocop:disable all
 ActiveRecord::Schema[7.0].define(version: 20_221_206_162_606) do
   # These are extensions that must be enabled in order to support this database
+  
+  
   enable_extension 'plpgsql'
 
   create_table 'comments', force: :cascade do |t|
