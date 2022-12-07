@@ -18,7 +18,6 @@ gem 'httparty'
 
 # github workflow gems
 gem 'brakeman'
-gem 'bundler-audit'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'ruby_audit'
