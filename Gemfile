@@ -17,10 +17,13 @@ gem 'figaro'
 gem 'httparty'
 
 # github workflow gems
-gem 'brakeman'
-gem 'rubocop'
-gem 'rubocop-rails'
-gem 'ruby_audit'
+group:development, :test do
+  gem 'brakeman'
+  gem 'bundler-audit'
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'ruby_audit'
+end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
