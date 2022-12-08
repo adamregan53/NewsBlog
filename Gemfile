@@ -19,7 +19,7 @@ gem 'httparty'
 gem 'nokogiri', '~> 1.13', '>= 1.13.10'
 
 # github workflow gems
-group:development, :test do
+group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'rubocop'
