@@ -16,6 +16,8 @@ gem 'figaro'
 
 gem 'httparty'
 
+gem 'nokogiri', '~> 1.13', '>= 1.13.10'
+
 # github workflow gems
 group:development, :test do
   gem 'brakeman'
