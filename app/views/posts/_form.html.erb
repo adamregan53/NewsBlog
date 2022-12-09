@@ -2,7 +2,7 @@
   <div class="p-3">
     <div>
       <%= form.label :article %><br>
-      <%= form.select :article, @articles_array%>
+      <%= form.select :article, @articles %>
       <% post.errors.full_messages_for(:article).each do |message| %>
         <div><%= message %></div>
       <% end %>

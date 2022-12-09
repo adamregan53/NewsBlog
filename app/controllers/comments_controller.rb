@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
     @comment.post_id = @post.id
-    @comment.user = User.find(1)
+    @comment.user = current_user
 
     if @comment.save
       redirect_to post_path(@post)
@@ -15,7 +15,12 @@ class CommentsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    @comment.destroy
+    redirect_to post_path(@post), status: :see_other
+  end
 
   private
 

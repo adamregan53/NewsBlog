@@ -3,7 +3,11 @@
 require 'test_helper'
 
 class NewsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'should get news page' do
+    get '/'
+    assert_response :success
+  end
+
+  test '' do
+  end
 end

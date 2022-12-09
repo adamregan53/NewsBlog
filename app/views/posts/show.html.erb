@@ -1,17 +1,40 @@
-<div class="md:container bg-slate-300 p-5">
+<div class="md:container bg-slate-300 p-5 ">
     <div class="p-3">
         <h1 class="font-bold text-2xl"><%= @post.article %></h1>
         <p class="pt-3"><%= @post.body %></p>
+        <p class="text-xs">Published <%= @post.created_at.strftime("%m/%d/%Y %H:%M") %></p>
     </div>
+
+    <% if @post.user_id == current_user.id || current_user.role == "admin" %>
+        <div>
+            <button type="button" 
+                class="inline-block mx-3 px-6 py-2.5 bg-blue-600 text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                <%= link_to "Edit", edit_post_path %>
+            </button> 
+            <button type="button" 
+                class="inline-block mx-3 px-6 py-2.5 bg-blue-600 text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                <%= link_to "Delete", post_path(@post), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                } %>
+            </button> 
+        </div>
+    <% end %>
 
     <div class="p-3">
         <div>
             <h2 class="font-bold mb-1">Add Comment</h2>
             <%= render 'comments/form' %>
         </div>
-        <div >
-            <h2 class="font-bold">Comments</h2>
-            <%= render @post.comments %>  
+
+        <div class="divide-y divide-gray-900 divide-dashed">
+            <div class="divide-y divide-gray-900 divide-dashed">
+                <h2 class="font-bold">Comments</h2>
+            </div>
+            <div class="divide-y divide-gray-900 divide-dashed">
+                <%= render @post.comments %>  
+            </div>
+
         </div>  
     </div>
 

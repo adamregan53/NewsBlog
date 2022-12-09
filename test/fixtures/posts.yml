@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  article: MyText
-  body: MyText
-  user: one
+  article: Schumer reelected as Senate majority leader
+  body: This is a test post for the first user
+  user: admin
 
 two:
-  article: MyText
-  body: MyText
-  user: two
+  article: Germany arrests 25 suspected far-right extremists for plotting to overthrow government
+  body: This is a test post for the second user and is longer than the
+  user: user1
+
+three:
+  article: Germany arrests 25 suspected far-right extremists for plotting to overthrow government
+  body: test post
+  user: user1
