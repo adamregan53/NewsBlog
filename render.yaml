@@ -1,6 +1,6 @@
 databases:
   - name: NewsBlog
-    databaseName: NewsBlog_development
+    databaseName: NewsBlog
     user: adam
 
 services:
