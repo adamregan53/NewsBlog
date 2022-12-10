@@ -1,18 +1,18 @@
 databases:
-  - name: NewsBlog
-    databaseName: newsblog_prod
-    user: adam
+  - name: postgres
+    ipAllowList: []
 
 services:
   - type: web
-    name: NewsBlog
+    name: rails
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: NewsBlog_production
+          name: postgres
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
+    
