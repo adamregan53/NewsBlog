@@ -1,7 +1,7 @@
 databases:
   - name: NewsBlog
-    databaseName: NewsBlog_production
-    user: NewsBlog
+    databaseName: NewsBlog_development
+    user: adam
 
 services:
   - type: web
