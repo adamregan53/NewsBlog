@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class CreateNewPostsWorkflowTest < ActionDispatch::IntegrationTest
   test 'can create a new post' do
@@ -13,5 +15,4 @@ class CreateNewPostsWorkflowTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_response :success
   end
-
 end

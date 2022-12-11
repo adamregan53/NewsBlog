@@ -1,7 +1,9 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class CreateNewCommentTest < ActionDispatch::IntegrationTest
-  test "create_new_comment_workflow" do 
+  test 'create_new_comment_workflow' do
     sign_in users(:user1)
     get '/posts/new'
     assert_response :success
@@ -16,11 +18,8 @@ class CreateNewCommentTest < ActionDispatch::IntegrationTest
     comment = comments(:one)
     assert comment.save
     assert_response :success
-    
   end
 
-  test "update_post_workflow" do
-
+  test 'update_post_workflow' do
   end
-
 end

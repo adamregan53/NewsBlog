@@ -3,19 +3,18 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
- test "comment does not save without body" do
+  test 'comment does not save without body' do
     comment = Comment.new
     assert_not comment.save
- end
+  end
 
- test "comment saves with body" do
-  comment = comments(:one)
-  assert comment.save
- end
+  test 'comment saves with body' do
+    comment = comments(:one)
+    assert comment.save
+  end
 
- test "comment should delete" do
-  comment = comments(:one)
-  assert comment.delete
- end
-
+  test 'comment should delete' do
+    comment = comments(:one)
+    assert comment.delete
+  end
 end
